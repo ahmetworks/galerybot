@@ -14,6 +14,10 @@ client.on("messageCreate", (message) => {
 			client.channels.cache.get(config.aKanal).send({
 				content: `${message.attachments.map((r) => r)[0].url}`,
 			});
+		else if(message.embeds.map(r => r).length > 0)
+			client.channels.cache.get(config.aKanal).send({
+				content: `${message.embeds.map((r) => r)[0].image}`,
+			});
 	}
 });
 
